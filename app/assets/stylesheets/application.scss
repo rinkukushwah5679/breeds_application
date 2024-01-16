@@ -1,0 +1,16 @@
+@import "bootstrap";
+@import "bootstrap";
+.inline-form label,
+.inline-form input,
+.inline-form button {
+display: inline-block !important;
+margin-right: 10px;
+}
+.inline-form input {
+margin-right: 0px;
+max-width: 70%;
+}
+.breed_image_size{
+	height: 60%;
+	width: 60%;
+}

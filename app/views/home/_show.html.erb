@@ -1,0 +1,8 @@
+<% if @breed_data['status'] == 'success' %>
+	<% url = @breed_data['message'] %>
+	<img src="<%= url %>" class="breed_image_size">
+<% elsif @breed_data['code'] == 404 %>
+	<h4><%= @breed_data['message'] %></h4>
+<% else %>
+	<h4><%= @breed_data['errors'] %></h4>
+<% end %>
