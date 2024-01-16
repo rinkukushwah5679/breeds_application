@@ -1,11 +1,11 @@
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row mt-4">
     <div class="col-md-6">
-      <form id="breedForm" class="inline-form">
+    	<%= form_tag "/fetch_breed", class: "inline-form", id: "breed_form", remote: true do %>
         <label for="breed">Breed:</label>
-        <input type="text" id="bname" name="fname" class="form-control" value="affenpinscher">
-        <button type="button" class="btn btn-success" onclick="submitForm()">Submit</button>
-      </form>
+        <input type="text" id="bname" name="breed" class="form-control" value="affenpinscher">
+        <button type="submit" class="btn btn-success">Submit</button>
+      <% end %>
     </div>
     <div class="col-md-6">
       <div class="show_breed"></div>
@@ -14,12 +14,7 @@
 </div>
 
 <script type="text/javascript">
-	function submitForm() {
-	  var breed_name =  $('#bname').val()
-	  $.ajax({
-	    url: "/fetch_breed",
-	    type: "POST",
-	    data: {breed: breed_name},
-	  });
-	}
+	setTimeout(() => {
+	  $("#breed_form").submit();
+	}, "1000");
 </script>
